@@ -18,4 +18,4 @@ FORM_URL            =   "//android.widget.FrameLayout[@resource-id=\"android:id/
 
 FORM_BUTTON_ADD     =   "//android.widget.Button[@content-desc=\"Ajouter\"]"
 
-PRODUIT     =   "//android.widget.ImageView[@content-desc=\"Mens Cotton Jacket 55.99 $\"]"
+PRODUIT     =   "//android.widget.ImageView[contains(@content-desc, \"Fjallraven - Foldsack No. 1 Backpack\")]"
