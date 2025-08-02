@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.5 on win32)" generated="2025-07-24T13:41:39.685902" rpa="false" schemaversion="5">
+<suite id="s1" name="QA-BEATZ" source="C:\Users\Mouha\Desktop\QA-BEATZ">
+<suite id="s1-s1" name="Teste" source="C:\Users\Mouha\Desktop\QA-BEATZ\Teste">
+<suite id="s1-s1-s1" name="Beatz" source="C:\Users\Mouha\Desktop\QA-BEATZ\Teste\Beatz.robot">
+<test id="s1-s1-s1-t1" name="Execution" line="5">
+<kw name="Créer Session" owner="Beatz-Code">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:40.579650" level="INFO">Creating Session using : alias=fakestore, url=https://fakestoreapi.com, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fakestore</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-07-24T13:41:40.578379" elapsed="0.002829"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:40.577177" elapsed="0.004496"/>
+</kw>
+<kw name="Créer Produit Valide" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:40.584435" level="INFO">${body} = {'title': 'Laptop', 'price': '500000', 'description': 'Ordinateur EliteBook', 'image': 'https://image.com', 'category': 'Electronics'}</msg>
+<var>${body}</var>
+<arg>title=Laptop</arg>
+<arg>price=500000</arg>
+<arg>description=Ordinateur EliteBook</arg>
+<arg>image=https://image.com</arg>
+<arg>category=Electronics</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:40.583597" elapsed="0.001217"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:40.929332" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '134', 'Content-Type': 'application/json'} 
+ body=b'{"title": "Laptop", "price": "500000", "description": "Ordinateur EliteBook", "image": "https://image.com", "category": "Electronics"}' 
+ </msg>
+<msg time="2025-07-24T13:41:40.931381" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:40 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"85-CMOW+A8s3eyjtwheQVh10WETYgU"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=x2IjRUxgYdagWgbBM2gJqsNcL3Tw1sEIeoXJMsrmLgrvFd3TWA3j81d%2FfjvUL3ITVa6ug0rfGilJTyYgBebto6jcLbKISWgCI06R9UTf"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d622b92cec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":21,"title":"Laptop","price":"500000","description":"Ordinateur EliteBook","image":"https://image.com","category":"Electronics"} 
+ </msg>
+<msg time="2025-07-24T13:41:40.932675" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:40.935575" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:40.585187" elapsed="0.351612"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:40.941710" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:40.938019" elapsed="0.004656"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:40.582568" elapsed="0.360688"/>
+</kw>
+<kw name="Créer Produit Sans Titre" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:40.949868" level="INFO">${body} = {'price': '200000', 'description': 'Sans titre', 'image': 'https://image.com'}</msg>
+<var>${body}</var>
+<arg>price=200000</arg>
+<arg>description=Sans titre</arg>
+<arg>image=https://image.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:40.947593" elapsed="0.003218"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.063695" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '78', 'Content-Type': 'application/json'} 
+ body=b'{"price": "200000", "description": "Sans titre", "image": "https://image.com"}' 
+ </msg>
+<msg time="2025-07-24T13:41:41.064906" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"51-V5Lv1nbFPiLVgqHyAqEDAmCsQVI"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=Z34ze9tpwkHYLBovN1z9nQlOwg%2BfLWXb8O4RdiqOSb86IbyUpD3ndUVa7JFCGxw6lrvs3loh5THjPqYrYCO%2FbppLwlU2GrCDiVSWUJK%2B"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d6239b62ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":21,"price":"200000","description":"Sans titre","image":"https://image.com"} 
+ </msg>
+<msg time="2025-07-24T13:41:41.065730" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.067776" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:40.951609" elapsed="0.116588"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.072046" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.068886" elapsed="0.004162"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:40.944793" elapsed="0.128792"/>
+</kw>
+<kw name="Créer Produit Prix Négatif" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.078048" level="INFO">${body} = {'title': 'MauvaisPrix', 'price': '-10', 'description': 'Prix invalide', 'image': 'https://image.com'}</msg>
+<var>${body}</var>
+<arg>title=MauvaisPrix</arg>
+<arg>price=-10</arg>
+<arg>description=Prix invalide</arg>
+<arg>image=https://image.com</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.076595" elapsed="0.002046"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.190082" level="INFO">POST Request : url=https://fakestoreapi.com/products 
+ path_url=/products 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '102', 'Content-Type': 'application/json'} 
+ body=b'{"title": "MauvaisPrix", "price": "-10", "description": "Prix invalide", "image": "https://image.com"}' 
+ </msg>
+<msg time="2025-07-24T13:41:41.190843" level="INFO">POST Response : url=https://fakestoreapi.com/products 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"67-m2PQf1ktPT8tM0qg5hkqjS8oylQ"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=cYzE55VNBwH0sLdHo8yM7QOcKep4bOzuE7GOjRD1c9teHccShrvOvQ3W3X9M6Oq5xj8pyIhQe5VcO6ougFMuGkOc7pWTP0tnVoRYloTs"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d6246db5ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":21,"title":"MauvaisPrix","price":"-10","description":"Prix invalide","image":"https://image.com"} 
+ </msg>
+<msg time="2025-07-24T13:41:41.191619" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.193466" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.079603" elapsed="0.114510"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.197954" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.194830" elapsed="0.003864"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.074933" elapsed="0.124247"/>
+</kw>
+<kw name="Lire Produit Existant" owner="Beatz-Code">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.312937" level="INFO">GET Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:41.315260" level="INFO">GET Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=pUo81vJj6iLBe4qPGNawB6JZbdPkIVQOyrPYbUxBtEAQrQXUJ3wsu0bujYROdlIPVl9uOtQbocVKNJZvyBkHWVCQgeERyHjlq5o8Ll7m"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d6252f86ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+ </msg>
+<msg time="2025-07-24T13:41:41.316465" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.318035" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.201465" elapsed="0.117188"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.322467" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.319362" elapsed="0.004072"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.200281" elapsed="0.123612"/>
+</kw>
+<kw name="Lire Produit ID Inexistant" owner="Beatz-Code">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.436478" level="INFO">GET Request : url=https://fakestoreapi.com/products/9999 
+ path_url=/products/9999 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:41.437682" level="INFO">GET Response : url=https://fakestoreapi.com/products/9999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=PMiRugXM70A30mDZLj8yKI6kdHgGsEiV17CXFO8GG6zA%2F2TrMuJuQLXHvJIOiC8n35TuXEhx93AIr42RwD5C9fRDeBNvQ%2Bte2f9uNaK9"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d625e98eec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:41.438500" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.439875" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/9999</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.327021" elapsed="0.113938"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.445454" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.441864" elapsed="0.004511"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.325400" elapsed="0.121614"/>
+</kw>
+<kw name="Lire Produit ID Invalide Texte" owner="Beatz-Code">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.572170" level="INFO">GET Request : url=https://fakestoreapi.com/products/abc 
+ path_url=/products/abc 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:41.573347" level="INFO">GET Response : url=https://fakestoreapi.com/products/abc 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=wXDafw7kzv36CnP1Vms0%2BJPt0eYaG0Wo%2BV%2FHduCxivovDCCtxgb9XfMRCs6bAoozsgeM9EZsmOCL3%2BG8bXKf5uP6FGFrBVa0flVQ4f%2B3"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d626cb94ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:41.575732" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.577320" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/abc</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.451683" elapsed="0.126241"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.581760" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.578895" elapsed="0.004814"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.449796" elapsed="0.134576"/>
+</kw>
+<kw name="Mettre à Jour Produit Valide" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.590088" level="INFO">${body} = {'title': 'PC Révisé', 'price': '450000'}</msg>
+<var>${body}</var>
+<arg>title=PC Révisé</arg>
+<arg>price=450000</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.588080" elapsed="0.002740"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.711518" level="INFO">PUT Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '51', 'Content-Type': 'application/json'} 
+ body=b'{"title": "PC R\\u00e9vis\\u00e9", "price": "450000"}' 
+ </msg>
+<msg time="2025-07-24T13:41:41.712571" level="INFO">PUT Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2f-1geK8RV/GjxVbQsHHxUr8KP80L0"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=IE4XUJLo8%2B1aO%2FjtLX1fBnCXScJe50zv1SJCvPDsJ66OzTLFeyX7ZYW09WQ0Z1pj6EQ0dZWbSmv%2BykVKDct1CYM8JbSLM9AV7ST2DBah"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d627ae13ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"title":"PC Révisé","price":"450000"} 
+ </msg>
+<msg time="2025-07-24T13:41:41.714820" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.718264" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/1</arg>
+<arg>json=${body}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.591598" elapsed="0.127226"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.722689" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.719711" elapsed="0.003656"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.585728" elapsed="0.138208"/>
+</kw>
+<kw name="Mettre à Jour Produit Inexistant" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.730182" level="INFO">${body} = {'title': 'Fake', 'price': '123'}</msg>
+<var>${body}</var>
+<arg>title=Fake</arg>
+<arg>price=123</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.728033" elapsed="0.004072"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.844918" level="INFO">PUT Request : url=https://fakestoreapi.com/products/9999 
+ path_url=/products/9999 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '33', 'Content-Type': 'application/json'} 
+ body=b'{"title": "Fake", "price": "123"}' 
+ </msg>
+<msg time="2025-07-24T13:41:41.846687" level="INFO">PUT Response : url=https://fakestoreapi.com/products/9999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:41 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"28-0mWBu44QHM+84qVlA9i56CkmkrU"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=6CzGxbKLGl41mF2BmE58xuxkVgbiwigNq6twYolbfehsw%2FQvomYvbZ0Jd1qvbh8aiVAEt8bGxBVu03Uahxc84utX5076cPdTwVXOOKSi"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d6287848ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":9999,"title":"Fake","price":"123"} 
+ </msg>
+<msg time="2025-07-24T13:41:41.847645" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.849666" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/9999</arg>
+<arg>json=${body}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.732993" elapsed="0.118029"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.856373" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.851957" elapsed="0.005335"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.725735" elapsed="0.132302"/>
+</kw>
+<kw name="Mettre à Jour Produit Prix Invalide" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.865469" level="INFO">${body} = {'price': '“Texte”', 'title': 'Test'}</msg>
+<var>${body}</var>
+<arg>price=“Texte”</arg>
+<arg>title=Test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.863005" elapsed="0.003668"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:41.985997" level="INFO">PUT Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '47', 'Content-Type': 'application/json'} 
+ body=b'{"price": "\\u201cTexte\\u201d", "title": "Test"}' 
+ </msg>
+<msg time="2025-07-24T13:41:41.987567" level="INFO">PUT Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2d-R4XSn0+aGDVUyM5eZ1gKf2uNTOA"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=4GmzEvpfytDuaRUDWBDo461tFj18huEo7KANOrL9%2FgHD0CQ64rO4%2Fwc4n%2FmISEqS5lyvIYeZWZaWY7fGSGv0ET%2F0ZEeGJiJ31K%2FMovJq"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d6295a55ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"title":"Test","price":"“Texte”"} 
+ </msg>
+<msg time="2025-07-24T13:41:41.988449" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:41.993264" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/1</arg>
+<arg>json=${body}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.868245" elapsed="0.125635"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:41.998816" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:41.995078" elapsed="0.005807"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:41.860692" elapsed="0.140862"/>
+</kw>
+<kw name="Supprimer Produit Valide" owner="Beatz-Code">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:42.222188" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/1 
+ path_url=/products/1 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:42.223347" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/1 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"16c-MMdrqY6N0sTiefLdsgtBej9eunY"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=8yeCzIVHQOXzDMsCeQrNP0%2Bsr8yaeStcl1xBR7wu3vbtsOXcBccDeiROJ3gfPeHb9fy8rlt91b75ZkftG6LR3jG3Loz1BBCdeSfRpzGZ"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d62a3c5aec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"id":1,"title":"Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops","price":109.95,"description":"Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday","category":"men's clothing","image":"https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg","rating":{"rate":3.9,"count":120}} 
+ </msg>
+<msg time="2025-07-24T13:41:42.224574" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:42.226212" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/1</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.005911" elapsed="0.221536"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:42.232369" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.228415" elapsed="0.005246"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:42.003505" elapsed="0.230808"/>
+</kw>
+<kw name="Supprimer Produit Inexistant" owner="Beatz-Code">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:42.460888" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/9999 
+ path_url=/products/9999 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:42.461833" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/9999 
+ status=200, reason=OK 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"4-K+iMpCQsduglOsYkdIUQZQMtaDM"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=135CK3QExjNtE5KO5SUIS6AvLb7G3CNHkvNO2u3OajAoew3ZfDr3ejvMyggqVZ7%2FNUt2ozqSQKexqt7RhsP3MNy%2FDyS5%2FWhQPSF5%2FXxU"}]}', 'Content-Encoding': 'gzip', 'Server': 'cloudflare', 'CF-RAY': '9643d62baf89ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body=null 
+ </msg>
+<msg time="2025-07-24T13:41:42.462666" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:42.465089" level="INFO">${resp} = &lt;Response [200]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/9999</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.239379" elapsed="0.228013"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:42.471057" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.468349" elapsed="0.003529"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:42.236668" elapsed="0.235918"/>
+</kw>
+<kw name="Supprimer Produit ID Texte" owner="Beatz-Code">
+<kw name="DELETE On Session" owner="RequestsLibrary">
+<msg time="2025-07-24T13:41:42.605491" level="INFO">DELETE Request : url=https://fakestoreapi.com/products/xyz 
+ path_url=/products/xyz 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-07-24T13:41:42.607739" level="INFO">DELETE Response : url=https://fakestoreapi.com/products/xyz 
+ status=400, reason=Bad Request 
+ headers={'Date': 'Thu, 24 Jul 2025 13:41:42 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': '60', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"3c-qDWc7CBSCdcHfGFZgGwxOqVw5sM"', 'X-Powered-By': 'Express', 'Cf-Cache-Status': 'DYNAMIC', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=71cid9MwDdCa1D2QYzfDKoTRDmTDpMb4KawwoBqkYB8KCTsLClDP6usuNfARNaRgCE4zyOvnYICSJO3Vivk8Od4c01J764RfwQYnFwbn"}]}', 'Server': 'cloudflare', 'CF-RAY': '9643d62d2b42ec8e-MAD', 'alt-svc': 'h3=":443"; ma=86400'} 
+ body={"status":"error","message":"product id should be provided"} 
+ </msg>
+<msg time="2025-07-24T13:41:42.608499" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'fakestoreapi.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-07-24T13:41:42.610657" level="INFO">${resp} = &lt;Response [400]&gt;</msg>
+<var>${resp}</var>
+<arg>fakestore</arg>
+<arg>/products/xyz</arg>
+<arg>expected_status=ANY</arg>
+<doc>Sends a DELETE request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.476642" elapsed="0.134440"/>
+</kw>
+<kw name="Should Not Be Equal As Integers" owner="BuiltIn">
+<msg time="2025-07-24T13:41:42.614935" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${resp.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are equal after converting them to integers.</doc>
+<status status="PASS" start="2025-07-24T13:41:42.611902" elapsed="0.004447"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:42.475172" elapsed="0.141697"/>
+</kw>
+<status status="PASS" start="2025-07-24T13:41:40.574199" elapsed="2.044121"/>
+</test>
+<status status="PASS" start="2025-07-24T13:41:39.749065" elapsed="2.877528"/>
+</suite>
+<status status="PASS" start="2025-07-24T13:41:39.741956" elapsed="2.892560"/>
+</suite>
+<status status="PASS" start="2025-07-24T13:41:39.693095" elapsed="2.952776"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="QA-BEATZ" id="s1" pass="1" fail="0" skip="0">QA-BEATZ</stat>
+<stat name="Teste" id="s1-s1" pass="1" fail="0" skip="0">QA-BEATZ.Teste</stat>
+<stat name="Beatz" id="s1-s1-s1" pass="1" fail="0" skip="0">QA-BEATZ.Teste.Beatz</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

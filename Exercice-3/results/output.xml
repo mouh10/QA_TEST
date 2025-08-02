@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.5 on win32)" generated="2025-08-01T21:55:04.675655" rpa="false" schemaversion="5">
+<suite id="s1" name="Exercice-3" source="C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-3">
+<suite id="s1-s1" name="Teste" source="C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-3\Teste">
+<suite id="s1-s1-s1" name="Beatz" source="C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-3\Teste\Beatz.robot">
+<kw name="Create Session To Fulfillment API" owner="Beatz-Code" type="SETUP">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-08-01T21:55:05.298871" level="INFO">Creating Session using : alias=fulfillment, url=https://api.sandbox.ebay.com/sell/fulfillment/v1, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer v^1.1#i^1#I^3#f^0#r^0#p^3#t^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'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fulfillment</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-08-01T21:55:05.297952" elapsed="0.002829"/>
+</kw>
+<doc>Crée une session vers l'API de Fulfillment</doc>
+<status status="PASS" start="2025-08-01T21:55:05.296992" elapsed="0.004246"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Suite Setup" line="7">
+<kw name="Create Session To Fulfillment API" owner="Beatz-Code">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-08-01T21:55:05.307861" level="INFO">Creating Session using : alias=fulfillment, url=https://api.sandbox.ebay.com/sell/fulfillment/v1, headers={'Content-Type': 'application/json', 'Authorization': 'Bearer v^1.1#i^1#I^3#f^0#r^0#p^3#t^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'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>fulfillment</arg>
+<arg>${BASE_URL}</arg>
+<arg>headers=${HEADERS}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-08-01T21:55:05.307380" elapsed="0.000947"/>
+</kw>
+<doc>Crée une session vers l'API de Fulfillment</doc>
+<status status="PASS" start="2025-08-01T21:55:05.306757" elapsed="0.002494"/>
+</kw>
+<kw name="Get Orders Test" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-01T21:55:05.311472" level="INFO">${params} = {'limit': '5'}</msg>
+<var>${params}</var>
+<arg>limit=5</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-01T21:55:05.310811" elapsed="0.000886"/>
+</kw>
+<kw name="Get Orders" owner="Beatz-Code">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-08-01T21:55:06.514188" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5 
+ path_url=/sell/fulfillment/v1/order?limit=5 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer v^1.1#i^1#I^3#f^0#r^0#p^3#t^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'} 
+ body=None 
+ </msg>
+<msg time="2025-08-01T21:55:06.517555" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*gu4j4-19867a1b15f-0x2349', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '125', 'date': 'Fri, 01 Aug 2025 21:55:06 GMT', 'x-envoy-upstream-service-time': '45', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5&amp;offset=0","total":0,"limit":5,"offset":0,"orders":[]} 
+ </msg>
+<msg time="2025-08-01T21:55:06.518756" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.sandbox.ebay.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-08-01T21:55:06.521734" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fulfillment</arg>
+<arg>/order</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-08-01T21:55:05.312762" elapsed="1.209499"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.527578" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.523343" elapsed="0.005044"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-08-01T21:55:06.529049" elapsed="0.001006"/>
+</return>
+<msg time="2025-08-01T21:55:06.532530" level="INFO">${orders} = {'href': 'https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5&amp;offset=0', 'total': 0, 'limit': 5, 'offset': 0, 'orders': []}</msg>
+<var>${orders}</var>
+<arg>${params}</arg>
+<status status="PASS" start="2025-08-01T21:55:05.312176" elapsed="1.222143"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.536844" level="INFO">Length is 5.</msg>
+<arg>${orders}</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.535268" elapsed="0.002169"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.539619" level="INFO">Length is 5.</msg>
+<msg time="2025-08-01T21:55:06.540230" level="INFO">${order_count} = 5</msg>
+<var>${order_count}</var>
+<arg>${orders}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.538075" elapsed="0.002585"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${orders}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.541210" elapsed="0.002811"/>
+</kw>
+<doc>Test de récupération de la liste des commandes</doc>
+<status status="PASS" start="2025-08-01T21:55:05.310157" elapsed="1.234439"/>
+</kw>
+<kw name="Get Order By Id Test" owner="Beatz-Code">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.547872" level="INFO">${params} = {'limit': '5'}</msg>
+<var>${params}</var>
+<arg>limit=5</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.546681" elapsed="0.003073"/>
+</kw>
+<kw name="Get Orders" owner="Beatz-Code">
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2025-08-01T21:55:06.851134" level="INFO">GET Request : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5 
+ path_url=/sell/fulfillment/v1/order?limit=5 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Authorization': 'Bearer v^1.1#i^1#I^3#f^0#r^0#p^3#t^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'} 
+ body=None 
+ </msg>
+<msg time="2025-08-01T21:55:06.852651" level="INFO">GET Response : url=https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5 
+ status=200, reason=OK 
+ headers={'rlogid': 't6pithqauq%60fiiw%28ufmadh%7B%3F%3Ctowiugvpd%60jhs.vgiggi%7F.01d73ece%3Ce*d7v2g-19867a1b2a4-0x2351', 'x-ebay-client-tls-version': 'TLSv1.3', 'x-content-type-options': 'nosniff', 'x-xss-protection': '0', 'cache-control': 'no-cache, no-store, max-age=0, must-revalidate', 'pragma': 'no-cache', 'expires': '0', 'x-frame-options': 'DENY', 'content-type': 'application/json', 'content-length': '125', 'date': 'Fri, 01 Aug 2025 21:55:07 GMT', 'x-envoy-upstream-service-time': '49', 'server': 'ebay-proxy-server', 'strict-transport-security': 'max-age=31536000', 'x-ebay-pop-id': 'UFES2-LVSAZ01-apisandbox'} 
+ body={"href":"https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5&amp;offset=0","total":0,"limit":5,"offset":0,"orders":[]} 
+ </msg>
+<msg time="2025-08-01T21:55:06.853381" level="INFO">C:\Python313\Lib\site-packages\urllib3\connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'api.sandbox.ebay.com'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(</msg>
+<msg time="2025-08-01T21:55:06.856635" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>fulfillment</arg>
+<arg>/order</arg>
+<arg>params=${params}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.553566" elapsed="0.303977"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.862000" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.858539" elapsed="0.004291"/>
+</kw>
+<return>
+<value>${response.json()}</value>
+<status status="PASS" start="2025-08-01T21:55:06.863418" elapsed="0.000868"/>
+</return>
+<msg time="2025-08-01T21:55:06.866441" level="INFO">${orders_response} = {'href': 'https://api.sandbox.ebay.com/sell/fulfillment/v1/order?limit=5&amp;offset=0', 'total': 0, 'limit': 5, 'offset': 0, 'orders': []}</msg>
+<var>${orders_response}</var>
+<arg>${params}</arg>
+<status status="PASS" start="2025-08-01T21:55:06.552300" elapsed="0.314781"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-08-01T21:55:06.871489" level="INFO">${orders} = []</msg>
+<var>${orders}</var>
+<arg>${orders_response['orders']}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.868343" elapsed="0.004212"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Aucune commande disponible pour effectuer un test.</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.876162" elapsed="0.002884"/>
+</kw>
+<arg>${orders} != []</arg>
+<arg>Run Get Order By Valid Id Test</arg>
+<arg>${orders[0]['orderId']}</arg>
+<arg>ELSE</arg>
+<arg>Log To Console</arg>
+<arg>Aucune commande disponible pour effectuer un test.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-08-01T21:55:06.873427" elapsed="0.006311"/>
+</kw>
+<doc>Test pour récupérer une commande spécifique</doc>
+<status status="PASS" start="2025-08-01T21:55:06.545465" elapsed="0.334799"/>
+</kw>
+<status status="PASS" start="2025-08-01T21:55:05.301439" elapsed="1.579876"/>
+</test>
+<status status="PASS" start="2025-08-01T21:55:04.719841" elapsed="2.178115"/>
+</suite>
+<status status="PASS" start="2025-08-01T21:55:04.714998" elapsed="2.215977"/>
+</suite>
+<status status="PASS" start="2025-08-01T21:55:04.682391" elapsed="2.273140"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Exercice-3" id="s1" pass="1" fail="0" skip="0">Exercice-3</stat>
+<stat name="Teste" id="s1-s1" pass="1" fail="0" skip="0">Exercice-3.Teste</stat>
+<stat name="Beatz" id="s1-s1-s1" pass="1" fail="0" skip="0">Exercice-3.Teste.Beatz</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

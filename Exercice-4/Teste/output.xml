@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.13.5 on win32)" generated="2025-07-24T22:20:25.684064" rpa="false" schemaversion="5">
+<suite id="s1" name="Beatz" source="C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-4\Teste\Beatz.robot">
+<test id="s1-t1" name="Execution" line="6">
+<kw name="Open Application MyApp" owner="Beatz-Code">
+<kw name="Open Application">
+<msg time="2025-07-24T22:20:25.706722" level="FAIL">No keyword with name 'Open Application' found. Did you mean:
+    Beatz-Code.Open Application MyApp</msg>
+<arg>${REMOTE_URL}</arg>
+<arg>platformName=${PLATFORM_NAME}</arg>
+<arg>deviceName=${DEVICE_NAME}</arg>
+<arg>automationName=${AUTOMATION_NAME}</arg>
+<arg>appPackage=${APP_PACKAGE}</arg>
+<arg>appActivity=${APP_ACTIVITY}</arg>
+<arg>noReset=true</arg>
+<status status="FAIL" start="2025-07-24T22:20:25.706704" elapsed="0.000057">No keyword with name 'Open Application' found. Did you mean:
+    Beatz-Code.Open Application MyApp</status>
+</kw>
+<status status="FAIL" start="2025-07-24T22:20:25.705951" elapsed="0.000911">No keyword with name 'Open Application' found. Did you mean:
+    Beatz-Code.Open Application MyApp</status>
+</kw>
+<kw name="Enter username" owner="Beatz-Code">
+<status status="NOT RUN" start="2025-07-24T22:20:25.706978" elapsed="0.000014"/>
+</kw>
+<kw name="Enter password" owner="Beatz-Code">
+<status status="NOT RUN" start="2025-07-24T22:20:25.707075" elapsed="0.000011"/>
+</kw>
+<kw name="Log In" owner="Beatz-Code">
+<status status="NOT RUN" start="2025-07-24T22:20:25.707158" elapsed="0.000010"/>
+</kw>
+<status status="FAIL" start="2025-07-24T22:20:25.705444" elapsed="0.001811">No keyword with name 'Open Application' found. Did you mean:
+    Beatz-Code.Open Application MyApp</status>
+</test>
+<status status="FAIL" start="2025-07-24T22:20:25.685193" elapsed="0.022554"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Beatz" id="s1" pass="0" fail="1" skip="0">Beatz</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-07-24T22:20:25.703412" level="ERROR">Error in file 'C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-4\Ressources\Beatz-Code.robot' on line 2: Importing library 'AppiumLibrary' failed: ModuleNotFoundError: No module named 'AppiumLibrary'
+Traceback (most recent call last):
+  None
+PYTHONPATH:
+  C:\Users\Mouha\Desktop\BEATZ-TEST\Exercice-4\Teste
+  C:\Users\Mouha\AppData\Local\Programs\Python\Python313-arm64\python313.zip
+  C:\Users\Mouha\AppData\Local\Programs\Python\Python313-arm64\DLLs
+  C:\Users\Mouha\AppData\Local\Programs\Python\Python313-arm64\Lib
+  C:\Users\Mouha\AppData\Local\Programs\Python\Python313-arm64
+  C:\Users\Mouha\AppData\Local\Programs\Python\Python313-arm64\Lib\site-packages</msg>
+</errors>
+</robot>

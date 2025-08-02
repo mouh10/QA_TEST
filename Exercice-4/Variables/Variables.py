@@ -1,0 +1,7 @@
+REMOTE_URL =    "http://127.0.0.1:4723"        
+PLATFORM_NAME =  "Android"
+PLATFORM_VERSION = "10"
+DEVICE_NAME =     "22X7N19619009311"
+APP_PACKAGE =          "sn.sonatel.dsi.moussa.wade.moussawade"
+APP_ACTIVITY   =    ".MainActivity"
+AUTOMATION_NAME = "uiautomator2"
