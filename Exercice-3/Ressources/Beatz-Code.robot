@@ -5,13 +5,13 @@ Variables    ../Variables/Variables.py
 
 *** Keywords ***
 
-Create Session To Fulfillment API
+Create Session SandBox
     [Documentation]    Crée une session vers l'API de Fulfillment
-    Create Session    fulfillment    ${BASE_URL}    headers=${HEADERS}
+    Create Session    Session    ${BASE_URL}    headers=${HEADERS}
 
 Get Orders
     [Arguments]    ${params}=${EMPTY}
-    ${response}=    GET On Session    fulfillment    /order    params=${params}
+    ${response}=    GET On Session    Session    /order    params=${params}
     Should Be Equal As Strings    ${response.status_code}    200
     RETURN    ${response.json()}
 
@@ -25,7 +25,7 @@ Get Orders Test
 
 Get Order By Id
     [Arguments]    ${order_id}
-    ${response}=    GET On Session    fulfillment    /order/${order_id}
+    ${response}=    GET On Session    Session    /order/${order_id}
     RETURN    ${response}
 
 Run Get Order By Valid Id Test
@@ -46,7 +46,7 @@ Get Order By Id Test
 
 Issue Refund
     [Arguments]    ${order_id}    ${refund_data}
-    ${response}=    POST On Session    fulfillment    /order/${order_id}/issue_refund    json=${refund_data}
+    ${response}=    POST On Session    Session    /order/${order_id}/issue_refund    json=${refund_data}
     RETURN    ${response}
 
 Issue Refund Test
